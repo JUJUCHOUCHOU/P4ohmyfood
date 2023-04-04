@@ -51,26 +51,26 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #F6F6F6;
     padding-bottom: 4%;
 }
-
+.header__index{
+    background-color: #F6F6F6;
+}
 .logo {
     font-family: 'Shrikhand';
     font-style: italic;
     font-weight: 400;
     font-size: 30px;
     line-height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 63px;
-    
     margin: 0;
 }
 .logo__header--color{
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
@@ -218,16 +218,35 @@ input {
     text-decoration: none;
     font-weight: 700;
 }
+.resto__cardinfoheart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+}
+
 .logo__footer--color{
     background-color: #353535;
+    color: white;
 }
 footer {
     background-color: #353535;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 2%;
+}
+.footer__text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+footer i, footer p{
+    color: white;
+}
+footer i{
+    padding-right: 1%;
 }
 
-.footer__text i p {
-    color: white;
-    display: flex;
-}
+/*css pour les pages de restaurants
+pour les elements non identique a index*/
