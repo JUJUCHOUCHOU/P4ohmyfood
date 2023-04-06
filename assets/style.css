@@ -190,12 +190,13 @@ input {
     height: 25px;
     position: absolute;
     width: 80px;
-    margin-left: 82%;
+    margin-left: 72%;
     margin-top: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #99e2d0;
+    z-index: 1;
 }
 .resto__cardnew p{
     color: #008766;
@@ -255,10 +256,60 @@ pour les elements non identique à index*/
 .title__header a{
     margin-left: 2%;
 }
-
-.header__image{
+.menu__image{
     width: 100%;
 }
-main{
-    border-radius: ;
+.menu__title{
+    margin-top: -84px;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    z-index: 1;
+    padding: 2%;
+    display: flex;
+    align-items: baseline;
 }
+.main__color{
+    background-color: #F7F7F7;
+}
+.plat{
+    margin-left: 2%;
+    font-style: normal;
+    font-weight: 300;
+}
+.plat__border{
+    border-bottom: 3px solid #99E2D0;
+    width: 40px;
+    margin-bottom: 2%;
+}
+.plat__card{
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 2%;
+    width: 94%;
+    padding: 2%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.plat__card--bold{
+    font-weight: 500;
+}
+.plat__card--line2{
+    display: flex;
+    justify-content: space-between;
+}
+/*animations complexes */
+.resto__cardinfoheart i{
+    position: absolute;
+}
+.heart__color{
+    opacity: 0;
+    transition: all 2s;
+}
+.heart__color:hover{
+    opacity: 1;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
+}
+
+/*media queries*/
