@@ -301,22 +301,7 @@ footer i, footer a{
     justify-content: center;
     margin-top: 11%;
 }
-/*animations */
-.resto__cardinfoheart i, 
-.resto__heart i{
-    position: absolute;
-}
-.heart__color{
-    opacity: 0;
-    transition: all 400ms;
-}
-.heart__color:hover{
-    opacity: 1;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
-}
+
 /*media queries desktop*/
 @media screen and (min-width: 769px){
     body{
@@ -360,4 +345,20 @@ footer i, footer a{
         padding-right: 12px;
     }
 }
-/*modification 15/04*/
+/*animations */
+.resto__cardinfoheart i, 
+.resto__heart i{
+    position: absolute;
+}
+.heart__color{
+    opacity: 0;
+    transition: all 400ms;
+}
+.heart__color:hover{
+    opacity: 1;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
+}
+/*modification 18/04*/
