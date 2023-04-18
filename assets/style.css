@@ -113,7 +113,9 @@ input {
 }
 .buttons{
     display: flex;
+    flex-direction: column;
 }
+
 .btn__fonction {
     width: 90%;
     padding: 2%;
@@ -129,7 +131,6 @@ input {
     border-radius: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     margin-bottom: 5%;
-    width: auto;
 }
 
 .btn__roundednumber {
@@ -155,7 +156,7 @@ input {
 }
 .resto{
     background-color: #F6F6F6;
-    padding: 2%;
+    padding: 4%;
 }
 .resto h2{
     padding-bottom: 1%;
@@ -166,13 +167,14 @@ input {
     margin-bottom: 4%;
     background-color: white;
     border-radius: 15px;
+    position: relative;
 }
 .resto__cardnew{
     height: 25px;
     position: absolute;
     width: 80px;
-    margin-left: 72%;
-    margin-top: 4%;
+    right: 12px;
+    top: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,6 +187,8 @@ input {
 .resto__image{
     border-radius: 15px 15px 0 0;
     width: 100%;
+    object-fit: cover;
+    height: 180px;
 }
 .resto__cardinfo{
     display: flex;
@@ -218,34 +222,34 @@ input {
     background-color: var(--bgfooter-);
     color: white;
 }
-footer {
+.footerlist {
     background-color: var(--bgfooter-);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-left: 2%;
+    padding-left: 25px;
+    padding-top: 22px;
+    padding-bottom: 1px;
 }
 .footer__text{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    list-style: none;
+    padding-left: 0px;
 }
-footer i, footer p{
+.footer__line{
+    padding-bottom: 7px;
+}
+footer i, footer a{
     color: white;
 }
-footer i{
-    padding-right: 1%;
-}
-/*pages restaurant*/
-.title__header{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: baseline;
-    justify-content: space-around;
-    position: relative;
-    width: 80%;
-}
 
+/*restaurant menu*/
+.logo__header--color{
+    text-align: center;
+    position: relative;
+}
+.arrowback{
+    position: absolute;
+    top: 50%;
+    left: 23px;
+    transform: translateY(-50%);
+}
 .menu__image{
     width: 100%;
 }
@@ -297,14 +301,14 @@ footer i{
     justify-content: center;
     margin-top: 11%;
 }
-/*animations complexes */
+/*animations */
 .resto__cardinfoheart i, 
 .resto__heart i{
     position: absolute;
 }
 .heart__color{
     opacity: 0;
-    transition: all 2s;
+    transition: all 400ms;
 }
 .heart__color:hover{
     opacity: 1;
@@ -314,14 +318,46 @@ footer i{
     background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
 }
 /*media queries desktop*/
-@media screen and (max-width: 1440px){
+@media screen and (min-width: 769px){
     body{
         margin: 0;
     }
-    .buttons{
-        display: flex;
-        flex-wrap: wrap;
+    .navbar{
+        padding-left: 5%;
     }
-    
+    .buttons{
+        flex-direction: row;
+    }
+    .fonction{
+        margin-right: 5%;
+    }
+    .fonction h2{
+        padding-left: 1.8%;
+    }
+    .card{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .resto__card{
+        width: 45%;
+    }
+    .resto h2{
+        padding-left: 3%;
+    }
+    .footerlist{
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 3%;
+        padding-top: 3%;
+    }
+    .footer__text{
+        display: flex;
+    }
+    .footer__line{
+        padding-right: 12px;
+    }
 }
 /*modification 15/04*/
