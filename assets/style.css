@@ -301,22 +301,7 @@ footer i, footer a{
     justify-content: center;
     margin-top: 11%;
 }
-/*animations */
-.resto__cardinfoheart i, 
-.resto__heart i{
-    position: absolute;
-}
-.heart__color{
-    opacity: 0;
-    transition: all 400ms;
-}
-.heart__color:hover{
-    opacity: 1;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
-}
+
 /*media queries desktop*/
 @media screen and (min-width: 769px){
     body{
@@ -359,5 +344,54 @@ footer i, footer a{
     .footer__line{
         padding-right: 12px;
     }
+    .plat{
+        padding-left: 120px;
+        padding-right: 120px;
+        background-color: var(--bggrey-);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .main__color{
+        background-color: white;
+    }
+    .menu__title{
+        background-color: var(--bggrey-);
+        padding-left: 15%;
+    }
+    .resto__heart{
+        padding-top: 2%;
+    }
+    .resto__heart i{
+        right: 193px;
+        top: 28px;
+    }
+    .menu__background--color{
+        background-color: var(--bggrey-);
+        margin-top: 0px;
+        padding-top: 2%;
+    }
+    .plat, 
+    .menu__title, 
+    .menu__background--color{
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+
 }
-/*modification 15/04*/
+/*animations */
+.resto__cardinfoheart i, 
+.resto__heart i{
+    position: absolute;
+}
+.heart__color{
+    opacity: 0;
+    transition: all 400ms;
+}
+.heart__color:hover{
+    opacity: 1;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
+}
+/*modification 18/04*/
