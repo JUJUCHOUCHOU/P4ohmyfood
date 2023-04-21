@@ -288,6 +288,7 @@ footer i, footer a{
     width: 94%;
     padding: 2%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 .plat__card--bold{
     font-weight: 500;
@@ -296,13 +297,28 @@ footer i, footer a{
     display: flex;
     justify-content: space-between;
 }
+.plat__price{
+    position: absolute;
+    right: 4%;
+    bottom: 26%;
+}
 .command__btn{
     display: flex;
     justify-content: center;
     margin-top: 11%;
 }
-
-/*media queries desktop*/
+.check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-);
+    border-radius: 0px 15px 15px 0px;
+    width: 30%;   
+}
+.check i{
+    color: white; 
+}
+/*media queries tablette*/
 @media screen and (min-width: 769px){
     body{
         margin: 0;
@@ -373,12 +389,82 @@ footer i, footer a{
     .plat, 
     .menu__title, 
     .menu__background--color{
-        margin-left: 150px;
-        margin-right: 150px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .check{
+        margin-top: -28px;
+        margin-right: -69px;
+        margin-bottom: -9px;
     }
 
 }
+/*mediaqueries desktop*/
+@media screen and (min-width: 1224px){
+    .plat, 
+    .menu__title, 
+    .menu__background--color{
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    .card{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .check{
+        width: 13%;
+    }
+}
 /*animations */
+/*loader*/
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.99;
+    animation: loader__ending 3s forwards 2s;
+    background-color: var(--bggrey-);
+}
+
+@keyframes loader__ending{
+    0%{
+    transform: scale(1);
+    }
+    100%{
+    transform: scale(0);
+    }
+}
+.loader__animatedcircle{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: var(--violet-);
+    border-radius: 50%;
+    animation: move 2s cubic-bezier(.38,.5,.83,.67) infinite;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+}
+@keyframes move{
+    0%{
+        transform: translateX(0) scale(0.5);
+    }
+    25%{
+        transform: translateX(-80px) scale(1);
+    }
+    50%{
+        transform: translateX(0) scale(0.5);
+    }
+    75%{
+        transform: translateX(80px) scale(1);
+    }
+    100%{
+        transform: translateX(0) scale(0.5);
+    }
+}
+/*heart*/
 .resto__cardinfoheart i, 
 .resto__heart i{
     position: absolute;
@@ -394,4 +480,52 @@ footer i, footer a{
     -webkit-background-clip: text;
     background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
 }
-/*modification 18/04*/
+/*plat*/
+.plat__card{
+    animation: plat__animation 400ms linear;
+}
+.pA{
+    animation-delay: 100ms;
+}
+.pB{
+    animation-delay: 250ms;
+}
+.pC{
+    animation-delay: 400ms;
+}
+.pD{
+    animation-delay: 300ms;
+}
+@keyframes plat__animation{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+/*Check*/
+/*
+.plat__card, 
+.plat__card--bold,
+.plat__card--line2{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+*/
+.check
+.plat__card{
+    animation: plat__animation 400ms linear;
+}
+
+@keyframes plat__animation{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+/*modification 20/04*/
