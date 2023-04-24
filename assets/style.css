@@ -20,6 +20,55 @@ body {
 a{
     text-decoration: none;
 }
+/*loader animation */
+
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.99;
+    animation: loader__ending 3s forwards 2s;
+    background-color: var(--bggrey-);
+}
+
+@keyframes loader__ending{
+    0%{
+    transform: scale(1);
+    }
+    100%{
+    transform: scale(0);
+    }
+}
+.loader__animatedcircle{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: var(--violet-);
+    border-radius: 50%;
+    animation: move 2s cubic-bezier(.38,.5,.83,.67) infinite;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+}
+@keyframes move{
+    0%{
+        transform: translateX(0) scale(0.5);
+    }
+    25%{
+        transform: translateX(-80px) scale(1);
+    }
+    50%{
+        transform: translateX(0) scale(0.5);
+    }
+    75%{
+        transform: translateX(80px) scale(1);
+    }
+    100%{
+        transform: translateX(0) scale(0.5);
+    }
+}
 header{
     text-align: center;
     
@@ -218,6 +267,22 @@ input {
     font-size: 22px;
 }
 
+/*heart animation*/
+.resto__cardinfoheart i, 
+.resto__heart i{
+    position: absolute;
+}
+.heart__color{
+    opacity: 0;
+    transition: all 400ms;
+}
+.heart__color:hover{
+    opacity: 1;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
+}
 .logo__footer--color{
     background-color: var(--bgfooter-);
     color: white;
@@ -286,8 +351,11 @@ footer i, footer a{
     border-radius: 15px;
     margin-bottom: 2%;
     width: 94%;
-    padding: 2%;
+    padding: 1%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    height: 69px;
+    cursor: pointer;
 }
 .plat__card--bold{
     font-weight: 500;
@@ -296,13 +364,92 @@ footer i, footer a{
     display: flex;
     justify-content: space-between;
 }
+.plat__price{
+    position: absolute;
+    right: 4%;
+    bottom: 26%;
+}
+/*plat animation*/
+
+.plat__card{
+	animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+.pA{
+    animation-delay: 100ms;
+}
+.pB{
+    animation-delay: 250ms;
+}
+.pC{
+    animation-delay: 400ms;
+}
+
+@keyframes slide-right {
+    0% {
+    transform: translateX(-200px);
+    opacity: 0;
+    }
+    100% {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+
 .command__btn{
     display: flex;
     justify-content: center;
     margin-top: 11%;
 }
+.check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-);
+    border-radius: 0px 15px 15px 0px;
+    width: 25%;
+    height: 86px;
+    margin-top: -8%;
+    margin-right: -28%;
+}
+/*Check animation*/
+.plat:active,
+.check{    
+    animation: position__check 2s forwards;
+}
+.check i{
+    color: white; 
+}
 
-/*media queries desktop*/
+
+@keyframes position__check{
+    form{
+        transform: translateX(-84px);
+    }
+    to{
+        transform: translateX(-3px);
+    }
+}
+
+.check i{
+    animation: rotate__font 0.6ms ease-in-out both;
+}
+@keyframes rotate__font{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.plat__card, 
+.plat__card--bold,
+.plat__card--line2{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/*media queries tablette*/
 @media screen and (min-width: 769px){
     body{
         margin: 0;
@@ -344,21 +491,53 @@ footer i, footer a{
     .footer__line{
         padding-right: 12px;
     }
+    .plat{
+        padding-left: 120px;
+        padding-right: 120px;
+        background-color: var(--bggrey-);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .main__color{
+        background-color: white;
+    }
+    .menu__title{
+        background-color: var(--bggrey-);
+        padding-left: 15%;
+    }
+    .resto__heart{
+        padding-top: 2%;
+    }
+    .resto__heart i{
+        right: 193px;
+        top: 28px;
+    }
+    .menu__background--color{
+        background-color: var(--bggrey-);
+        margin-top: 0px;
+        padding-top: 2%;
+    }
+    .plat, 
+    .menu__title, 
+    .menu__background--color{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+
 }
-/*animations */
-.resto__cardinfoheart i, 
-.resto__heart i{
-    position: absolute;
+/*mediaqueries desktop*/
+@media screen and (min-width: 1224px){
+    .plat, 
+    .menu__title, 
+    .menu__background--color{
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    .card{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    
 }
-.heart__color{
-    opacity: 0;
-    transition: all 400ms;
-}
-.heart__color:hover{
-    opacity: 1;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
-}
-/*modification 18/04*/
+/*modification 24/04*/
