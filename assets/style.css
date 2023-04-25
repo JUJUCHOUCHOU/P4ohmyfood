@@ -20,6 +20,57 @@ body {
 a{
     text-decoration: none;
 }
+/*loader animation */
+
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.99;
+    animation: loader__ending 3s forwards 2s;
+    background-color: var(--bggrey-);
+}
+
+@keyframes loader__ending{
+    0%{
+    visibility: visible;
+    opacity: 1;
+    }
+    100%{
+    visibility: hidden;
+    opacity: 0;
+    }
+}
+.loader__animatedcircle{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: var(--violet-);
+    border-radius: 50%;
+    animation: move 2s cubic-bezier(.38,.5,.83,.67) infinite;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+}
+@keyframes move{
+    0%{
+        transform: translateX(0) scale(0.5);
+    }
+    25%{
+        transform: translateX(-80px) scale(1);
+    }
+    50%{
+        transform: translateX(0) scale(0.5);
+    }
+    75%{
+        transform: translateX(80px) scale(1);
+    }
+    100%{
+        transform: translateX(0) scale(0.5);
+    }
+}
 header{
     text-align: center;
     
@@ -168,6 +219,7 @@ input {
     background-color: white;
     border-radius: 15px;
     position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 .resto__cardnew{
     height: 25px;
@@ -208,6 +260,7 @@ input {
     font-weight: 300;
     font-size: 17px;
 }
+
 .resto__cardinfoheart{
     display: flex;
     justify-content: center;
@@ -218,6 +271,20 @@ input {
     font-size: 22px;
 }
 
+/*heart animation*/
+
+
+.heart__color{
+    opacity: 0;
+    transition: all 400ms;
+}
+.heart__color:hover{
+    opacity: 1;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
+}
 .logo__footer--color{
     background-color: var(--bgfooter-);
     color: white;
@@ -260,7 +327,8 @@ footer i, footer a{
     z-index: 1;
     padding-bottom: 7%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .resto__heart{
     display: flex;
@@ -276,6 +344,31 @@ footer i, footer a{
     font-style: normal;
     font-weight: 300;
 }
+/*plat animation*/
+
+.plat__card{
+	animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+.pA{
+    animation-delay: 100ms;
+}
+.pB{
+    animation-delay: 250ms;
+}
+.pC{
+    animation-delay: 400ms;
+}
+@keyframes slide-right {
+    0% {
+    transform: translateX(-200px);
+    opacity: 0;
+    }
+    100% {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
 .plat__border{
     border-bottom: 3px solid #99E2D0;
     width: 40px;
@@ -286,26 +379,28 @@ footer i, footer a{
     border-radius: 15px;
     margin-bottom: 2%;
     width: 94%;
-    padding: 2%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    position: relative;
+    height: 69px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.plat__card--text{
+    padding-top: 2%;
+    padding-left: 2%;
+}
+.plat__card--text p{
+    margin-top: 4px;
 }
 .plat__card--bold{
     font-weight: 500;
 }
-.plat__card--line2{
-    display: flex;
-    justify-content: space-between;
+.euro{
+    padding-right: 27px;
+    padding-top: 40%;
 }
 .plat__price{
-    position: absolute;
-    right: 4%;
-    bottom: 26%;
-}
-.command__btn{
     display: flex;
-    justify-content: center;
-    margin-top: 11%;
 }
 .check{
     display: flex;
@@ -313,11 +408,35 @@ footer i, footer a{
     align-items: center;
     background-color: var(--green-);
     border-radius: 0px 15px 15px 0px;
-    width: 30%;   
+    width: 0px;
+    overflow: hidden;
+    transition: ;
+}
+.plat__card:hover .check{
+    width: 59px;
 }
 .check i{
     color: white; 
 }
+
+.check i{
+    animation: rotate__font 0.6ms ease-in-out both;
+}
+@keyframes rotate__font{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.command__btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 11%;
+}
+
 /*media queries tablette*/
 @media screen and (min-width: 769px){
     body{
@@ -347,6 +466,9 @@ footer i, footer a{
     }
     .resto h2{
         padding-left: 3%;
+    }
+    .plat__card{
+        height: 69px;
     }
     .footerlist{
         display: flex;
@@ -392,11 +514,7 @@ footer i, footer a{
         margin-left: 100px;
         margin-right: 100px;
     }
-    .check{
-        margin-top: -28px;
-        margin-right: -69px;
-        margin-bottom: -9px;
-    }
+    
 
 }
 /*mediaqueries desktop*/
@@ -411,121 +529,6 @@ footer i, footer a{
         padding-left: 4%;
         padding-right: 4%;
     }
-    .check{
-        width: 13%;
-    }
+    
 }
-/*animations */
-/*loader*/
-.loader{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    inset: 0;
-    z-index: 1;
-    opacity: 0.99;
-    animation: loader__ending 3s forwards 2s;
-    background-color: var(--bggrey-);
-}
-
-@keyframes loader__ending{
-    0%{
-    transform: scale(1);
-    }
-    100%{
-    transform: scale(0);
-    }
-}
-.loader__animatedcircle{
-    position: relative;
-    width: 10px;
-    height: 10px;
-    background-color: var(--violet-);
-    border-radius: 50%;
-    animation: move 2s cubic-bezier(.38,.5,.83,.67) infinite;
-    top: 50%;
-    left: 50%;
-    transform-origin: top;
-}
-@keyframes move{
-    0%{
-        transform: translateX(0) scale(0.5);
-    }
-    25%{
-        transform: translateX(-80px) scale(1);
-    }
-    50%{
-        transform: translateX(0) scale(0.5);
-    }
-    75%{
-        transform: translateX(80px) scale(1);
-    }
-    100%{
-        transform: translateX(0) scale(0.5);
-    }
-}
-/*heart*/
-.resto__cardinfoheart i, 
-.resto__heart i{
-    position: absolute;
-}
-.heart__color{
-    opacity: 0;
-    transition: all 400ms;
-}
-.heart__color:hover{
-    opacity: 1;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);  
-}
-/*plat*/
-.plat__card{
-    animation: plat__animation 400ms linear;
-}
-.pA{
-    animation-delay: 100ms;
-}
-.pB{
-    animation-delay: 250ms;
-}
-.pC{
-    animation-delay: 400ms;
-}
-.pD{
-    animation-delay: 300ms;
-}
-@keyframes plat__animation{
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-}
-/*Check*/
-/*
-.plat__card, 
-.plat__card--bold,
-.plat__card--line2{
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-*/
-.check
-.plat__card{
-    animation: plat__animation 400ms linear;
-}
-
-@keyframes plat__animation{
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-}
-
-/*modification 20/04*/
+/*modification 24/04*/

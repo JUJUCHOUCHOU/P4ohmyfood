@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oh My Food</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,8 +15,12 @@
     rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="logo logo__header--color">Ohmyfood</h1>
+   <!-- loader-->
+    <div class="loader">
+      <div class="loader__animatedcircle"></div>
+      </div>
+  <header class=" 2">
+    <h1 class="logo logo__index logo__header--color">Ohmyfood</h1>
     <nav class="navbar">
       <form>
         <div class="navbar__text">
@@ -31,11 +36,6 @@
     <button class="header__btn">Explorer nos restaurants</button>
   </header>
   <main>
-    <!-- loader
-    <div class="loader">
-      <div class="loader__animatedcircle"></div>
-        <h1 class="logo">Ohmyfood</h1>
-      </div>-->
     <div class="fonction">
       <h2>Fonctionnement</h2>
       <div class="buttons">
@@ -64,30 +64,34 @@
     </div>
     <div class="resto">
       <h2>Restaurant</h2>
+      <div class="card">
       <article class="resto__card">
+        <a href="restaurant/la-palette-du-gout.html">
         <div class="resto__cardnew">
           <p>Nouveau</p>
         </div>
         <img class="resto__image" src="assets/img-txt-omf/images/restaurants/jay.jpg" alt="image de restaurant">
         <div class="resto__cardinfo">
           <div class="resto__cardinfotext">
-          <a class="resto__link" href="restaurant/la-palette-du-gout.html">La palette du goût</a>
-          <p>ménilmontant</p>
+            <h4>La palette du goût</h4>
+          <p>Ménilmontant</p>
         </div>
         <div class="resto__cardinfoheart">
           <i class="fa-regular fa-heart"></i>
           <i class="fa-solid fa-heart heart__color"></i>
         </div>
         </div>
+      </a>
       </article>
       <article class="resto__card">
+        <a href="restaurant/la-note-enchantee.html">
         <div class="resto__cardnew">
           <p>Nouveau</p>
         </div>
         <img class="resto__image" src="assets/img-txt-omf/images/restaurants/stil.jpg" alt="image de restaurant">
         <div class="resto__cardinfo">
           <div class="resto__cardinfotext">
-          <a class="resto__link" href="restaurant/la-note-enchantee.html">La note enchantée</a>
+          <h4>La note enchantée</h4>
           <p>Charonne</p>
           </div>
           <div class="resto__cardinfoheart">
@@ -95,12 +99,14 @@
             <i class="fa-solid fa-heart heart__color"></i>
           </div>
         </div>
+      </a>
       </article>
       <article class="resto__card">
+        <a href="restaurant/a-la-francaise.html">
         <img class="resto__image" src="assets/img-txt-omf/images/restaurants/toa.jpg" alt="image de restaurant">
         <div class="resto__cardinfo">
           <div class="resto__cardinfotext">
-          <a class="resto__link" href="restaurant/a-la-francaise.html">A la française</a>
+          <h4>À la française</h4>
           <p>Cité Rouge</p>
           </div>
           <div class="resto__cardinfoheart">
@@ -108,12 +114,14 @@
             <i class="fa-solid fa-heart heart__color"></i>
           </div>
         </div>
+      </a>
       </article>
       <article class="resto__card">
+        <a href="restaurant/le-delice-des-sens.html">
         <img class="resto__image" src="assets/img-txt-omf/images/restaurants/louis.jpg" alt="image de restaurant">
         <div class="resto__cardinfo">
           <div class="resto__cardinfotext">
-          <a class="resto__link" href="restaurant/le-delice-des-sens.html">Le délice des sens</a>
+          <h4>Le délice des sens</h4>
           <p>Folie Méricourt</p>
           </div>
           <div class="resto__cardinfoheart">
@@ -121,25 +129,30 @@
             <i class="fa-solid fa-heart heart__color"></i>
           </div>
         </div>
+      </a>
       </article>
     </div>
-    </div>
+  </div>
   </main>
   <footer>
+    <div class="footerlist">
     <h1 class="logo logo__footer--color">Ohmyfood</h1>
-    <div class="footer__text">
+    <ul class="footer__text">
+      <li class="footer__line">
       <i class="fa-sharp fa-solid fa-utensils"></i>
-      <p>Proposer un restaurant</p>
-    </div>
-    <div class="footer__text">
+      <a href="">Proposer un restaurant</a>
+      </li>
+      <li class="footer__line">
       <i class="fa-solid fa-handshake-angle"></i>
-      <p>Devenir partenaire</p>
-    </div>
-    <div class="footer__text">
-      <p>Mentions légales</p>
-    </div>
-    <div class="footer__text">
-      <p>Contact</p>
+      <a href="">Devenir partenaire</a>
+    </li>
+    <li class="footer__line">
+      <a href="">Mentions légales</a>
+    </li>
+    <li class="footer__line">
+      <a class="contact logo__footer--color" href="mailto:ohmyfood@mail.com">Contact</a>
+    </li>
+    </ul>
     </div>
   </footer>
 </body>
