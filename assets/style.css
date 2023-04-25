@@ -92,6 +92,7 @@ header{
 }
 .logo__menu{
     font-size: 28px;
+    padding-left: 14px;
 }
 .navbar{
     height: 50px;
@@ -267,12 +268,24 @@ input {
     align-items: center;
     margin-right: 8%;
 }
+
 .fa-heart{
     font-size: 22px;
 }
 
 /*heart animation*/
-
+.resto__cardinfoheart i, 
+.resto__heart i{
+    position: absolute;
+}
+.resto__heart i{
+    right: 50px;
+    top: 28px;
+}
+.resto__cardinfoheart i{
+    right: 25px;
+    bottom: 25px;
+}
 
 .heart__color{
     opacity: 0;
@@ -397,7 +410,7 @@ footer i, footer a{
 }
 .euro{
     padding-right: 27px;
-    padding-top: 40%;
+    padding-top: 31px;
 }
 .plat__price{
     display: flex;
@@ -410,27 +423,24 @@ footer i, footer a{
     border-radius: 0px 15px 15px 0px;
     width: 0px;
     overflow: hidden;
-    transition: ;
 }
 .plat__card:hover .check{
     width: 59px;
+    transition: width 2s ease;
 }
 .check i{
     color: white; 
 }
-
-.check i{
-    animation: rotate__font 0.6ms ease-in-out both;
+.plat__card
+.plat__card--text{
+    overflow: hidden;
+    white-space: nowrap;
 }
-@keyframes rotate__font{
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+.plat__card--text p,
+.plat__card--bold{
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 .command__btn{
     display: flex;
     justify-content: center;
@@ -462,7 +472,7 @@ footer i, footer a{
         padding-right: 3%;
     }
     .resto__card{
-        width: 45%;
+        width: 40%;
     }
     .resto h2{
         padding-left: 3%;
@@ -482,6 +492,7 @@ footer i, footer a{
     .footer__line{
         padding-right: 12px;
     }
+
     .plat{
         padding-left: 120px;
         padding-right: 120px;
@@ -500,8 +511,7 @@ footer i, footer a{
         padding-top: 2%;
     }
     .resto__heart i{
-        right: 193px;
-        top: 28px;
+        right: 24%;
     }
     .menu__background--color{
         background-color: var(--bggrey-);
@@ -511,10 +521,14 @@ footer i, footer a{
     .plat, 
     .menu__title, 
     .menu__background--color{
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 80px;
+        margin-right: 80px;
     }
-    
+    .menu__title{
+        justify-content: center;
+        padding-left: 0px;
+        padding-right: 20px;
+    }
 
 }
 /*mediaqueries desktop*/
@@ -529,6 +543,14 @@ footer i, footer a{
         padding-left: 4%;
         padding-right: 4%;
     }
-    
+    .resto__card{
+        width: 45%;
+    }
+    .resto__heart i{
+        right: 33%;
+    }
+    .logo__menu{
+        padding-left: 0;
+    }
 }
 /*modification 24/04*/
